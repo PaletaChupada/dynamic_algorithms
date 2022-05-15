@@ -4,16 +4,14 @@ Descripcion: A partir de una matriz que se interpreta como nodos de una red, se 
 Fecha: 16 de Mayo del 2022
 Autor: Espinoza Bautista Daniel
 '''
+# Importamos las librerias
+import random
 
-# Tamaño de la matrix
-R = 3
-C = 3
- 
 # Definicion de la funcion de caminos
-def camino(cost, m, n):
+def camino(cost, m, n, tam):
  
     # Inicializamos la matriz con el tamaño especificado anteriormente
-    tc = [[0 for x in range(C)] for x in range(R)]
+    tc = [[0 for x in range(tam)] for x in range(tam)]
  
     # Anexamos a la posicion 0 el costo del camino 0
     tc[0][0] = cost[0][0]
@@ -33,11 +31,18 @@ def camino(cost, m, n):
  
     # Retornamos la matriz con todos los costos ya hechos
     return tc[m][n]
- 
-# Driver program to test above functions
-cost = [[1, 2, 3],
-        [4, 8, 2],
-        [1, 5, 3]]
-print(camino(cost, 2, 2))
 
-print("mina")
+# Definimos el valor del tamaño de la matriz
+tam = 3
+
+# Inicializamos la matriz con el tamaño especificado anteriormente
+cost = [[0 for x in range(tam)] for x in range(tam)] 
+
+# Valores de la matriz generados aleatoriamente entre 1 y 10
+for i in range(len(cost)):
+    for j in range(len(cost[i])):
+        cost[i][j] = random.randint(1,10)
+
+print("\nMatriz: ",cost)
+
+print("\nCamino minimo: ",camino(cost, 2, 2, tam))
