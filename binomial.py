@@ -43,7 +43,7 @@ def binomial(n, k):
 n = int(input("Dame el valor del numero a calcular su coeficiente: "))
 
 # Solicitamos al usuario el coeficiente para calcularle al numero
-k = int(input("Dame el valor del co eficiente: "))
+k = int(input("Dame el valor del coeficiente: "))
 print("\n")
 
 # Inicializamos la variable para contar el tiempo de ejecucion
@@ -55,4 +55,4 @@ print("\n")
 
 # Calculamos el tiempo que tarda en ejecutarse y lo imprimimos en pantalla
 tiempo_fin = time() - tiempo_in
-print("\nTiempo de ejecucion: %.10f segundos." %tiempo_fin)
+print("Tiempo de ejecucion: %.10f segundos." %tiempo_fin)
