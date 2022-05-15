@@ -6,6 +6,7 @@ Autor: Espinoza Bautista Daniel
 '''
 # Importamos las librerias
 import random
+from time import time
 
 # Definicion de la funcion de caminos
 def camino(cost, m, n, tam):
@@ -43,6 +44,20 @@ for i in range(len(cost)):
     for j in range(len(cost[i])):
         cost[i][j] = random.randint(1,10)
 
+# Imprimimos la matriz
 print("\nMatriz: ",cost)
 
-print("\nCamino minimo: ",camino(cost, 2, 2, tam))
+# Solicitamos al usuario el valor de la posicion
+print("\nPosicion a calcular la ruta minima: ")
+fil = int(input("Fila: "))
+col = int(input("Columna: "))
+
+# Inicializamos la variable para contar el tiempo de ejecucion
+tiempo_in = time()
+
+# Imprimimos el valor del camino minimo
+print("\nCamino minimo: ",camino(cost, fil, col, tam))
+
+# Calculamos el tiempo que tarda en ejecutarse y lo imprimimos en pantalla
+tiempo_fin = time() - tiempo_in
+print("\nTiempo de ejecucion: %.10f segundos." %tiempo_fin)

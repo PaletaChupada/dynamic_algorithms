@@ -4,6 +4,8 @@ Descripcion: A partir de un numero solicitado al usuario y un coeficiente tambie
 Fecha: 16 de Mayo del 2022
 Autor: Espinoza Bautista Daniel
 '''
+# Importamos las librerias
+from time import time
 
 def binomialCheck(n, k, dp):
      
@@ -43,6 +45,14 @@ n = int(input("Dame el valor del numero a calcular su coeficiente: "))
 # Solicitamos al usuario el coeficiente para calcularle al numero
 k = int(input("Dame el valor del coeficiente: "))
 print("\n")
+
+# Inicializamos la variable para contar el tiempo de ejecucion
+tiempo_in = time()
  
 # Realizamos el calculo del coeficiente
 print("Valor del coeficiente binomial de "+str(n)+"\n"+"Con coeficiente " +str(k)+"\n"+"Es: ",binomial(n, k))
+print("\n")
+
+# Calculamos el tiempo que tarda en ejecutarse y lo imprimimos en pantalla
+tiempo_fin = time() - tiempo_in
+print("\nTiempo de ejecucion: %.10f segundos." %tiempo_fin)
